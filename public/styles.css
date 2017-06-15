@@ -1,0 +1,29 @@
+body {
+  background-color: #7FFFD4;
+}
+h1 {
+  text-align: center;
+  color: blue;
+  font-size: 3em;
+  font-family: 'Luckiest Guy', cursive;
+}
+#center {
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+fieldset {
+  border: none;
+  z-index: 1;
+}
+form {
+  text-align: center;
+}
+img {
+  width: 25%;
+  z-index: -1;
+  position: absolute;
+  left: 20%;
+}
