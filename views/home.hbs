@@ -1,45 +1,35 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
   <head>
-    <title>API App</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
-    <link rel="stylesheet" type="text/css"href="static/styles.css">
-
-  </head>
+    <title>Weather App</title>
+    <script src="/axios/axios.js"></script>
+  </head> -->
   <body>
-    
-    <h1> Amazing Weather App </h1>
-    <img src="static/images/weather.png">
-    <form method="get">
+    <form method="get" onsubmit="return get_weather()">
     <fieldset>
       <div id="center">
         <ul>
             <li>
-                <label for="latitude">Latitude</label><br>
-                <input type="text" id="latitude" placeholder="e.g. 42.9150747" required><br><br>
+            <label>City Name</label><br>
+            <input type="text" placeholder="e.g. Dallas, Tx">
             </li>
             <li>
-                <label for="longitude">Longitude</label><br>
-                <input type="text" id="longitude" placeholder="e.g. -77.784323" required><br><br>
+                <label>Latitude</label><br>
+                <input type="text" name="lat" id="lat" placeholder="e.g. 42.9150747" required><br><br>
             </li>
-        <li>
-        <label for="city-search">City Name</label><br>
-        <input type="text" id="city-search" placeholder="e.g. Dallas, Tx">
-      </li>
+            <li>
+                <label>Longitude</label><br>
+                <input type="text" name="long" id="long" placeholder="e.g. -77.784323" required><br><br>
+            </li>
       </ul>
     </div>
     </fieldset>
     <button>Get Weather</button>
-</form>
-
-    <!-- <h1>Search </h1>
-    <h2 id="temp"></h2> -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script> src="static/frontend.js"</script>
-    <script src="/axios/axios.js"></script>
-		<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js'></script> -->
+  </form>
+<div style="text-align: center;">
+  <h3>Your Weather Now:</h3>
+  <h3 id="temp"></h3>
+  <h3 id="icon"></h3>
+</div>
   </body>
-</html>
+<!-- </html> -->
