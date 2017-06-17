@@ -16,7 +16,8 @@ app.get('/', function (request, response) {
 
 app.get('/api', cache('5 minutes'), function (request, response, next) {
   console.log('Generating new response');
-  axios.get(`https://api.darksky.net/forecast/b9e88fa3742c42f79dfb5645bfd3891b/${request.query.lat},${request.query.long}`).then(function (r) {
+  axios.get(`https://api.darksky.net/forecast/b9e88fa3742c42f79dfb5645bfd3891b/${request.query.lat},${request.query.long}`)
+  .then(function (r) {
       response.json(r.data);
   })
   .catch(next);

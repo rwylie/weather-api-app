@@ -9,7 +9,41 @@ function get_weather () {
      s.innerHTML = response.data.currently.icon;
      var t = document.getElementById('temp');
      t.innerHTML = response.data.currently.temperature;
+     var y = document.getElementById('summary');
+     y.innerHTML = response.data.currently.summary;
+     var i = document.getElementById('icon');
+     i.innerHTML = response.data.currently.icon;
    });
 
   return false;
 }
+
+function initMap () {
+  console.log('Maps loaded');
+}
+
+// SearchBox Method
+function do_search () {
+  var geocoder = new google.maps.Geocoder();
+
+  geocoder.geocode({'address': $('#city-search').val()}, function(results, status) {
+    var location = results[0].geometry.location;
+    console.log(location);
+    $('#lat').val(location.lat);
+		$('#long').val(location.lng);
+
+    get_weather();
+  });
+
+  return false;
+}
+
+  var skycons = new Skycons({"color": "pink"});
+  // on Android, a nasty hack is needed: {"resizeClear": true}
+
+  // you can add a canvas by it's ID...
+  skycons.add("icon", Skycons.PARTLY_CLOUDY_DAY);
+
+
+  // start animation!
+  skycons.play();

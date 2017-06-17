@@ -5,21 +5,21 @@
     <script src="/axios/axios.js"></script>
   </head> -->
   <body>
-    <form method="get" onsubmit="return get_weather()">
+    <form method="get" onsubmit="return do_search()">
     <fieldset>
       <div id="center">
         <ul>
             <li>
             <label>City Name</label><br>
-            <input type="text" placeholder="e.g. Dallas, Tx">
+            <input id="city-search" type="text" placeholder="e.g. Dallas, Tx"><br><br>
             </li>
             <li>
                 <label>Latitude</label><br>
-                <input type="text" name="lat" id="lat" placeholder="e.g. 42.9150747" required><br><br>
+                <input type="text" name="lat" id="lat" placeholder="e.g. 42.9150747"><br><br>
             </li>
             <li>
                 <label>Longitude</label><br>
-                <input type="text" name="long" id="long" placeholder="e.g. -77.784323" required><br><br>
+                <input type="text" name="long" id="long" placeholder="e.g. -77.784323"><br><br>
             </li>
       </ul>
     </div>
@@ -27,9 +27,10 @@
     <button>Get Weather</button>
   </form>
 <div style="text-align: center;">
-  <h3>Your Weather Now:</h3>
+  <h3>Today is:</h3>
   <h3 id="temp"></h3>
-  <h3 id="icon"></h3>
+  <canvas id="icon" width="128" height="128"></canvas>
+  <h3 id="summary"></h3>
 </div>
   </body>
 <!-- </html> -->
